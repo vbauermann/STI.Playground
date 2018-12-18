@@ -1,0 +1,38 @@
+﻿<header class="header">
+    <h1 class="header__title"><header-async></header-async></h1>
+    <i class="material-icons" ng-click="vm.reload();" style="cursor:pointer;"> cached </i>
+</header>
+
+<main class="main" ng-if="!vm.loading" style="text-align:center;">
+    <h4>Tokenization with NTK</h4>
+    <div>
+        <label>Body:</label>
+        <input type="text" ng-model="vm.body" placeholder="json do body" />
+        <br />
+        <label>authenticationapi :</label>
+        <input type="text" ng-model="vm.authenticationapi" placeholder="authenticationapi" />
+        <br />
+        <label>authenticationkey :</label>
+        <input type="text" ng-model="vm.authenticationkey" placeholder="authenticationkey" />
+        <br />
+        <button ng-click="vm.runRequest();">Run Request</button>
+        <br />
+        <label>Url do request: https://api.gate2all.com.br/v1/tokenization </label>
+        <br />
+        <br />
+        <div ng-if="vm.response">
+            <label>Response: </label>
+            <p>{{vm.response}}</p>
+        </div>
+        <br />
+        <div ng-if="vm.error">
+            <label>Error: </label>
+            <p>{{vm.error}}</p>
+        </div>
+    </div>
+</main>
+<div class="loader" ng-if="vm.loading">
+    <svg viewBox="0 0 32 32" width="32" height="32">
+        <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
+    </svg>
+</div>

@@ -1,0 +1,9 @@
+.ButtonPrimaryCollor{
+    color: @CorPrincipalBotao;
+}
+.ButtonSecondaryCollor{
+    color: @CorSecundariaBotao;
+}
+.BackgroundColor{
+    background-color: @CorBackground;
+}

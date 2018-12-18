@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang=pt-br>
+<head>
+    <meta charset="utf-8">
+    <meta content="Playground para teste de novas tecnologias, feito por STI Society Tecnologia da Informação Ltda." name="description">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#3F51B5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STI Playground</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/inline.css">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Weather PWA">
+    <link rel="apple-touch-icon" href="assets/images/icons/icon-152x152.png">
+    <meta name="msapplication-TileImage" content="assets/images/icons/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#2F3BA2">
+</head>
+<body ng-app="app">
+
+    <div ui-view></div>
+
+
+
+
+
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <script src="lib/chart.js/dist/Chart.min.js"></script>
+    <script src="lib/angular-chart.js/dist/angular-chart.min.js"></script>
+    <script src="lib/angular-google-chart/ng-google-chart.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { packages: ['corechart'], language: 'pt_br' });
+    </script>
+
+    <script src="app/app.module.js"></script>
+    <script src="app/app.globals.js"></script>
+    <script src="app/playground.routes.js"></script>
+    <script src="app/playground.controller.js"></script>
+    <script src="app/components/header/header.component.js"></script>
+    <script src="app/components/inputs/login/login-x/login-x.component.js"></script>
+    <script src="app/components/inputs/login/login-default/login-default.component.js"></script>
+    <script src="app/components/inputs/login/login-139/login-139.component.js"></script>
+    <script src="app/tokenization-ntk/tokenization-ntk.routes.js"></script>
+    <script src="app/tokenization-ntk/tokenization-ntk.controller.js"></script>
+    <script src="app/dashboard/dashboard.routes.js"></script>
+    <script src="app/dashboard/dashboard.controller.js"></script>
+</body>
+</html>

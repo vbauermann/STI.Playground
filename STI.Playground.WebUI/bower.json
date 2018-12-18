@@ -1,0 +1,10 @@
+{
+  "name": "asp.net",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-ui-router": "^1.0.15",
+    "angular-chart.js": "~1.0.3",
+    "angular-google-chart": "1.0.0-beta.1"
+  }
+}

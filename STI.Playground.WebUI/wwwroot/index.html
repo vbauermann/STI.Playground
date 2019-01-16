@@ -9,7 +9,6 @@
     <title>STI Playground</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/inline.css">
-    <link rel="manifest" href="/manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="Weather PWA">
@@ -21,10 +20,25 @@
 
     <div ui-view></div>
 
-
-
-
-
+    <script type="text/javascript">
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker
+                .getRegistrations()
+                .then(function (registrations) {
+                    for (var i = 0; i < registrations.length; i++) {
+                        registrations[i].unregister();
+                    }
+                    if (registrations.length) {
+                        caches.keys().then(function (names) {
+                            for (var i = 0; i < names.length; i++) {
+                                caches.delete(names[i]);
+                            }
+                        });
+                        location.reload(true);
+                    }
+                });
+        }
+    </script>
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
 
@@ -39,7 +53,10 @@
     <script src="app/app.module.js"></script>
     <script src="app/app.globals.js"></script>
     <script src="app/playground.routes.js"></script>
+    <script src="app/playground.interceptors.js"></script>
     <script src="app/playground.controller.js"></script>
+    <script src="app/common/notifying-service/notifying-service.factory.js"></script>
+    <script src="app/common/application-insights-service/application-insights-service.factory.js"></script>
     <script src="app/components/header/header.component.js"></script>
     <script src="app/components/inputs/login/login-x/login-x.component.js"></script>
     <script src="app/components/inputs/login/login-default/login-default.component.js"></script>

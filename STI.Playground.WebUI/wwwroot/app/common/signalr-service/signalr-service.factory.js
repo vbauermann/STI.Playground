@@ -49,11 +49,11 @@
         return createHub;
     }
 
-    angular.module('app').value('connectionStateTypes', {
-        connecting: $.signalR.connectionState.connecting,
-        connected: $.signalR.connectionState.connected,
-        reconnecting: $.signalR.connectionState.reconnecting,
-        disconnected: $.signalR.connectionState.disconnected
-    });
+    //angular.module('app').value('connectionStateTypes', {
+    //    connecting: $.signalR.connectionState.connecting,
+    //    connected: $.signalR.connectionState.connected,
+    //    reconnecting: $.signalR.connectionState.reconnecting,
+    //    disconnected: $.signalR.connectionState.disconnected
+    //});
 
 })();

@@ -8,36 +8,36 @@
     realTimeNotificationController.$inject = ['signalrService', 'SignalrServer', '$timeout'];
     function realTimeNotificationController(signalrService, SignalrServer, $timeout) {
         var vm = this;
-        var _hub = signalrService("playgroundNotificationSignalRHub");
 
         vm.loading = false;
         vm.notifications = [];
         vm.SignalrServer = SignalrServer;
+        vm.Hub = "/chathub";
 
 
         vm.connectAndConfigureSignalR = connectAndConfigureSignalR;
 
-        function connectAndConfigureSignalR() {
-            vm.loading = true;
+        async function connectAndConfigureSignalR() {
+            try {
+                vm.loading = true;
+                const connection = new signalR.HubConnectionBuilder()
+                    .withUrl(SignalrServer + vm.Hub)
+                    .configureLogging(signalR.LogLevel.Information)
+                    .build();
 
-            _hub.connect();
+                connection.on("ReceiveMessage", (user, message) => {
+                    console.log('user: ', user, ' message: ', message);
+                    vm.notifications.push({ user: user, message: message });
+                });
 
-            //_hub.onDisconnected(function () {
-            //    $timeout(function () {
-            //        _hub.connect();
-            //    });
-            //});
+                await connection.start();
+            } catch (err) {
+                console.log(err);
+            } finally {
+                vm.loading = false;
+            }
 
-            _hub.on('OnNotificationReceived', function (data) {
 
-                console.log('OnNotificationReceived: ', data);
-
-                if (data.tenant === 'tenant' && data.matricula === 'matricula' && data.doc === 'doc')
-                    vm.notifications.push(data);
-
-            })
-
-            vm.loading = false;
         }
     }
 })();

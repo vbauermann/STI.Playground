@@ -24,8 +24,6 @@ namespace STI.Playground.Associados.Infra.SqlServer.Templates
                             .Query<dynamic>(sql)
                             .Select(p => new PropriedadeDoTemplate(p.Descricao, p.Nome, p.Valor));
             }
-        }
-
-     
+        }     
     }
 }

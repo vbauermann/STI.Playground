@@ -16,9 +16,19 @@
         <label ng-click="vm.club = 234;" style="margin:0px 15px; cursor:pointer;" ng-class="{'highlighted':vm.club === 234}">234 (hasn't)</label>
         <login-x club="vm.club" ng-init="vm.club = null"></login-x>
     </div>
+
+
+    <form>
+        <input type="date" ng-model="vm.date" />
+        <input type="time" ng-model="vm.time" />
+        <button ng-click="vm.send(vm.date, vm.time);">Send</button>
+    </form>
+
 </main>
 <div class="loader" ng-if="vm.loading">
     <svg viewBox="0 0 32 32" width="32" height="32">
         <circle id="spinner" cx="16" cy="16" r="14" fill="none"></circle>
     </svg>
 </div>
+
+

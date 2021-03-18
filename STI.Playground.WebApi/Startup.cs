@@ -34,7 +34,7 @@ namespace STI.Playground.WebApi
         {
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
-            app.UseCors(builder => builder
+                app.UseCors(builder => builder
                 .AllowAnyOrigin()
                 .AllowAnyHeader()
                 .AllowAnyMethod()

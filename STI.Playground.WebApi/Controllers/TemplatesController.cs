@@ -48,5 +48,17 @@ namespace STI.Playground.WebApi.Controllers
             }
         }
 
+        [HttpPost]
+        public IActionResult Post([FromBody]TimeZoneTest im)
+        {
+            var t = im;
+            return Ok();
+        }
+
+    }
+
+    public class TimeZoneTest
+    {
+        public DateTime Date { get; set; }
     }
 }

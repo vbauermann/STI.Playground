@@ -40,9 +40,11 @@
                 });
         }
     </script>
+    <!-- Libs -->
     <script src="lib/angular/angular.min.js"></script>
     <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+    <script src="lib/signalr/jquery.signalR.min.js"></script>
     <script src="lib/chart.js/dist/Chart.min.js"></script>
     <script src="lib/angular-chart.js/dist/angular-chart.min.js"></script>
     <script src="lib/angular-google-chart/ng-google-chart.min.js"></script>
@@ -51,21 +53,32 @@
         google.charts.load('current', { packages: ['corechart'], language: 'pt_br' });
     </script>
 
+    <!-- App -->
     <script src="app/app.module.js"></script>
+    <script src="app/app.constants.js"></script>
     <script src="app/app.globals.js"></script>
     <script src="app/playground.routes.js"></script>
     <script src="app/playground.interceptors.js"></script>
     <script src="app/playground.controller.js"></script>
+    <!-- Common -->
     <script src="app/common/notifying-service/notifying-service.factory.js"></script>
     <script src="app/common/application-insights-service/application-insights-service.factory.js"></script>
+    <script src="app/common/signalr-service/signalr-service.factory.js"></script>
+    <!-- Components -->
     <script src="app/components/header/header.component.js"></script>
     <script src="app/components/inputs/login/login-x/login-x.component.js"></script>
     <script src="app/components/inputs/login/login-default/login-default.component.js"></script>
     <script src="app/components/inputs/login/login-139/login-139.component.js"></script>
+    <!-- Tokenization NTK -->
     <script src="app/tokenization-ntk/tokenization-ntk.routes.js"></script>
     <script src="app/tokenization-ntk/tokenization-ntk.controller.js"></script>
+    <!-- Dashboard -->
     <script src="app/dashboard/dashboard.routes.js"></script>
     <script src="app/dashboard/dashboard.controller.js"></script>
+    <!-- Real Time Notification -->
+    <script src="app/real-time-notification/real-time-notification.routes.js"></script>
+    <script src="app/real-time-notification/real-time-notification.controller.js"></script>
+    <!-- Templates -->
     <script src="app/templates/templates.routes.js"></script>
     <script src="app/templates/templates.controller.js"></script>
 </body>
